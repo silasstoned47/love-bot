@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "outDir": "./dist/server",
+    "rootDir": "./src",
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "lib": ["ES2023"],
+    "noEmit": false,
+    "allowImportingTsExtensions": false
+  },
+  "include": [
+    "src/server.ts",
+    "src/workers/**/*.ts",
+    "src/db/**/*.ts",
+    "src/lib/**/*.ts"
+  ],
+  "exclude": ["src/**/*.spec.ts", "src/**/*.test.ts", "node_modules", "src/components/**/*", "src/pages/**/*"]
+}

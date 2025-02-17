@@ -1,11 +1,6 @@
 import { pool } from '../lib/mysql';
 import { readFileSync } from 'fs';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
-
-// Fix para __dirname em ESM
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import { join } from 'path';
 
 async function initDatabase() {
   try {

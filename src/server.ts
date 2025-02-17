@@ -25,8 +25,12 @@ server.register(cors, {
 
 // Webhook routes
 server.get('/webhook', async (request, reply) => {
-  const challenge = request.query['hub.challenge'];
-  const verifyToken = request.query['hub.verify_token'];
+  const query = request.query as { 
+    'hub.challenge': string, 
+    'hub.verify_token': string 
+  };
+  const challenge = query['hub.challenge'];
+  const verifyToken = query['hub.verify_token'];
 
   if (verifyToken === env.FACEBOOK_VERIFICATION_TOKEN) {
     return reply.send(challenge);
@@ -118,9 +122,13 @@ server.get('/messages/metrics/summary', async () => {
     });
     
     // Extrai os valores dos resultados
-    const totalLeads = Number(leadsResult[0]?.total) || 0;
-    const totalMessages = Number(messagesResult[0]?.total) || 0;
-    const totalClicks = Number(clicksResult[0]?.total) || 0;
+    interface QueryResultRow {
+      total: number;
+    }
+    
+    const totalLeads = Number((leadsResult as QueryResultRow[])[0]?.total) || 0;
+    const totalMessages = Number((messagesResult as QueryResultRow[])[0]?.total) || 0;
+    const totalClicks = Number((clicksResult as QueryResultRow[])[0]?.total) || 0;
     
     // Calcula taxa de conversão (cliques / mensagens)
     const conversionRate = totalMessages > 0 ? 
@@ -159,12 +167,13 @@ async function getRateLimit(senderId: string): Promise<boolean> {
 // Rota de redirecionamento com rate limiting
 server.get('/redirect', async (request, reply) => {
   try {
-    const { target, button, sender, msg } = request.query as {
+    const query = request.query as {
       target?: string;
       button?: string;
       sender?: string;
       msg?: string;
     };
+    const { target, button, sender, msg } = query;
 
     if (!target || !button || !sender || !msg) {
       return reply.status(400).send({ message: 'Parâmetros inválidos' });
