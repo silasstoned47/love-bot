@@ -30,7 +30,7 @@ npm install
 Create a `.env` file with:
 ```
 VITE_API_URL=http://localhost:5173
-PORT=5000
+PORT=80
 NODE_ENV=development
 BASE_URL=your-ngrok-url
 FACEBOOK_PAGE_ID=your-page-id

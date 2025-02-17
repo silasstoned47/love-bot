@@ -6,7 +6,7 @@ config();
 
 const envSchema = z.object({
   // Server
-  PORT: z.string().default('5000'),
+  PORT: z.string().default('80'),
   HOST: z.string().default('0.0.0.0'),
   NODE_ENV: z.string().default('development'),
   BASE_URL: z.string(),
