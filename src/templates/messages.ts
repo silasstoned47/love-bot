@@ -34,19 +34,19 @@ export const messageTemplates: Record<string, MessageTemplate> = {
         template_type: "generic",
         elements: [
           {
-            title: "🔥 VAZOU: TOP 10 PERFIS MAIS QUENTES DA SUA REGIÃO! 🔥",
-            image_url: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600",
-            subtitle: "🚨 ATENÇÃO: Descobrimos pessoas INCRÍVEIS a menos de 5KM de você! Perfis EXCLUSIVOS liberados por tempo LIMITADO! 💘",
+            title: "✨ Oi, sou sua nova admiradora... ✨",
+            image_url: "https://i.imgur.com/dBp4cI3.jpeg",
+            subtitle: "Você me despertou curiosidade... Quer ver o que tenho guardado pra você?",
             buttons: [
               {
                 type: "web_url",
                 url: trackUrl('https://extraduda.com/app-namoro/', 'tinder', senderId, 'first'),
-                title: "🎯 VER FOTOS AGORA 🎯"
+                title: "😍 Espiar Agora"
               },
               {
                 type: "web_url",
                 url: trackUrl('https://extraduda.com/app-namoro/', 'bumble', senderId, 'first'),
-                title: "💋 MATCH SECRETO 💋"
+                title: "💌 Meu Segredinho"
               }
             ]
           }
@@ -62,19 +62,19 @@ export const messageTemplates: Record<string, MessageTemplate> = {
         template_type: "generic",
         elements: [
           {
-            title: "💘 ALERTA: Seu PAR IDEAL acabou de entrar! 💘",
-            image_url: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600",
-            subtitle: "🎯 ALGORITMO DETECTOU match com 99.9% de compatibilidade! CORRA antes que outra pessoa encontre primeiro! ⚡",
+            title: "🔥 Já estou pensando em você... 🔥",
+            image_url: "https://i.imgur.com/kTctRie.jpeg",
+            subtitle: "Senti saudade... Que tal descobrir meu lado mais ousado?",
             buttons: [
               {
                 type: "web_url",
                 url: trackUrl('https://extraduda.com/app-namoro/', 'happn', senderId, 'second'),
-                title: "💫 MATCH IMEDIATO 💫"
+                title: "👀 Espiar"
               },
               {
                 type: "web_url",
                 url: trackUrl('https://extraduda.com/app-namoro/', 'parperfeito', senderId, 'second'),
-                title: "💑 AMOR HOJE 💑"
+                title: "💋 Me Mostra"
               }
             ]
           }
@@ -90,19 +90,19 @@ export const messageTemplates: Record<string, MessageTemplate> = {
         template_type: "generic",
         elements: [
           {
-            title: "⚡ ULTRA SECRETO: Fórmula da Conquista REVELADA! ⚡",
-            image_url: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=600",
-            subtitle: "🔐 Método PROIBIDO usado por MILHARES para encontrar o AMOR VERDADEIRO em 24 HORAS! Vagas LIMITADAS! 🚀",
+            title: "😈 Tô cada vez mais quente... 😈",
+            image_url: "https://revistatrip.uol.com.br/upload/2016/11/581a21e21b028/1240x822x1200x630x20x176/sabrina-gevaerd-palido2.png",
+            subtitle: "Não divido isso com qualquer um... Pronto pra ver?",
             buttons: [
               {
                 type: "web_url",
                 url: trackUrl('https://extraduda.com/app-namoro/', 'innercircle', senderId, 'third'),
-                title: "🎁 LIBERAR AGORA 🎁"
+                title: "💎 Ver Agora 💎"
               },
               {
                 type: "web_url",
                 url: trackUrl('https://extraduda.com/app-namoro/', 'security', senderId, 'third'),
-                title: "🔥 ÁREA VIP 🔥"
+                title: "🔓 Me Desvendar"
               }
             ]
           }
@@ -118,19 +118,19 @@ export const messageTemplates: Record<string, MessageTemplate> = {
         template_type: "generic",
         elements: [
           {
-            title: "⚠️ ÚLTIMA CHANCE: Alma Gêmea em PERIGO! ⚠️",
-            image_url: "https://images.unsplash.com/photo-1516195851888-6f1a981a862e?w=600",
-            subtitle: "🚨 URGENTE: Seu par ideal está ONLINE agora! 99.9% de chance de MATCH INSTANTÂNEO! Oferta expira em 60 MINUTOS! ⏰",
+            title: "😍 Só você pode ter esse privilégio... 😍",
+            image_url: "https://images.unsplash.com/photo-1516195851888-6f1a981a862e?w=600&blur=50",
+            subtitle: "Vem que quero te mostrar tudo!",
             buttons: [
               {
                 type: "web_url",
                 url: trackUrl('https://extraduda.com/app-namoro/', 'badoo', senderId, 'fourth'),
-                title: "💘 MATCH EXPRESS 💘"
+                title: "💘 Acessar Agora 💘"
               },
               {
                 type: "web_url",
                 url: trackUrl('https://match.com', 'match', senderId, 'fourth'),
-                title: "✨ DESTINO FINAL ✨"
+                title: "💫 Segredo Especial 💫"
               }
             ]
           }
