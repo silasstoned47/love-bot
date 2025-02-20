@@ -1,32 +1,32 @@
 import { z } from 'zod';
-import { config } from 'dotenv';
+import * as dotenv from 'dotenv';
 
-// Carrega variáveis de ambiente
-config();
+dotenv.config();
 
 const envSchema = z.object({
   // Server
-  PORT: z.string().default('80'),
-  HOST: z.string().default('0.0.0.0'),
-  NODE_ENV: z.string().default('development'),
+  PORT: z.string().default('5000'),
+  NODE_ENV: z.enum(['development', 'production']).default('development'),
   BASE_URL: z.string(),
 
   // Facebook
   FACEBOOK_PAGE_ID: z.string(),
   FACEBOOK_ACCESS_TOKEN: z.string(),
   FACEBOOK_VERIFICATION_TOKEN: z.string(),
-  
+
   // Redis
-  REDIS_HOST: z.string(),
-  REDIS_PORT: z.string().transform(Number),
-  REDIS_PASSWORD: z.string().optional(),
+  REDIS_HOST: z.string().default('redis'),
+  REDIS_PORT: z.string().default('6379'),
+  REDIS_PASSWORD: z.string(),
 
   // MySQL
-  MYSQL_HOST: z.string(),
-  MYSQL_USER: z.string(),
+  MYSQL_HOST: z.string().default('mysql'),
+  MYSQL_PORT: z.string().default('3306'),
+  MYSQL_USER: z.string().default('mariadb'),
   MYSQL_PASSWORD: z.string(),
-  MYSQL_DATABASE: z.string(),
-  MYSQL_PORT: z.string().transform(Number).default('3306'),
+  MYSQL_DATABASE: z.string().default('social_db_meta'),
 });
 
-export const env = envSchema.parse(process.env);
+const env = envSchema.parse(process.env);
+
+export default env;

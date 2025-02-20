@@ -5,3 +5,4 @@ node_modules
 .bolt
 dist
 npm-debug.log*
+.cred
