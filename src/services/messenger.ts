@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { env } from '../config/env';
-import { logger } from '../config/logger';
-import { messageTemplates } from '../templates/messages';
+import { env } from '../config/env.js';
+import { logger } from '../config/logger.js';
+import { messageTemplates } from '../templates/messages.js';
 
 const FACEBOOK_API = 'https://graph.facebook.com/v22.0';
 

@@ -1,11 +1,11 @@
 import { config } from 'dotenv';
 import Fastify from 'fastify';
 import cors from '@fastify/cors';
-import { redis } from './lib/redis';
-import { pool } from './lib/mysql';
-import { logger } from './config/logger';
-import { processMessage } from './services/messageProcessor';
-import { env } from './config/env';
+import { redis } from './lib/redis.js';
+import { pool } from './lib/mysql.js';
+import { logger } from './config/logger.js';
+import { processMessage } from './services/messageProcessor.js';
+import { env } from './config/env.js';
 
 // Carrega variáveis de ambiente
 config();

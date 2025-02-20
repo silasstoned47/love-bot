@@ -19,22 +19,14 @@ const envSchema = z.object({
   // Redis
   REDIS_HOST: z.string(),
   REDIS_PORT: z.string().transform(Number),
-  REDIS_PASSWORD: z.string(),
-  
+  REDIS_PASSWORD: z.string().optional(),
+
   // MySQL
   MYSQL_HOST: z.string(),
-  MYSQL_PORT: z.string().transform(Number).default('3306'),
   MYSQL_USER: z.string(),
   MYSQL_PASSWORD: z.string(),
   MYSQL_DATABASE: z.string(),
+  MYSQL_PORT: z.string().transform(Number).default('3306'),
 });
 
-// Valida as variáveis de ambiente
-const _env = envSchema.safeParse(process.env);
-
-if (!_env.success) {
-  console.error('❌ Variáveis de ambiente inválidas:', _env.error.format());
-  throw new Error('Variáveis de ambiente inválidas.');
-}
-
-export const env = _env.data;
+export const env = envSchema.parse(process.env);

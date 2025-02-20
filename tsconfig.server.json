@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "CommonJS",
-    "moduleResolution": "node",
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "esModuleInterop": true,
     "outDir": "./dist/server",
     "rootDir": "./src",
@@ -20,7 +20,9 @@
     "src/server.ts",
     "src/workers/**/*.ts",
     "src/db/**/*.ts",
-    "src/lib/**/*.ts"
+    "src/lib/**/*.ts",
+    "src/config/**/*.ts",
+    "src/services/**/*.ts"
   ],
   "exclude": ["src/**/*.spec.ts", "src/**/*.test.ts", "node_modules", "src/components/**/*", "src/pages/**/*"]
 }

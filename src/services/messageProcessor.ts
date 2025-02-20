@@ -1,7 +1,7 @@
-import { redis } from '../lib/redis';
-import { pool } from '../lib/mysql';
-import { logger } from '../config/logger';
-import { sendMessage } from './messenger';
+import { redis } from '../lib/redis.js';
+import { pool } from '../lib/mysql.js';
+import { logger } from '../config/logger.js';
+import { sendMessage } from './messenger.js';
 
 export async function processMessage(event: any) {
   try {

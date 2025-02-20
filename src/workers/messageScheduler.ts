@@ -1,6 +1,6 @@
-import { redis } from '../lib/redis';
-import { sendMessage } from '../services/messenger';
-import { logger } from '../config/logger';
+import { redis } from '../lib/redis.js';
+import { sendMessage } from '../services/messenger.js';
+import { logger } from '../config/logger.js';
 
 const INTERVAL = 1000; // 1 segundo
 

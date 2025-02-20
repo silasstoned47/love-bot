@@ -1,49 +1,99 @@
-# LoveBot - Facebook Messenger Lead Generation Bot
+# LoveBot
 
-A powerful Facebook Messenger bot built with TypeScript for lead generation and user engagement. Features a sophisticated message scheduling system and click tracking capabilities.
+Um bot do Facebook Messenger para gerenciamento de leads e automação de mensagens.
 
-## 🚀 Features
+## Tecnologias
 
-- Automated message sequences with Redis-based scheduling
-- Click tracking and analytics
-- Dynamic URL generation with tracking parameters
-- Persuasive message templates
-- Error handling and logging
-- Process management with auto-restart
-
-## 🛠️ Tech Stack
-
+- Node.js 20
 - TypeScript
-- Fastify
 - Redis
-- MariaDB
-- Facebook Messenger API
+- MySQL
+- Docker
+- PM2
 
-## ⚙️ Setup
+## Configuração do Ambiente
 
-1. Install dependencies:
+### Pré-requisitos
+
+- Docker
+- Docker Compose
+
+### Variáveis de Ambiente
+
+Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
+
+```env
+# Server Configuration
+PORT=5000
+NODE_ENV=development
+BASE_URL=https://seu-dominio.com
+
+# Facebook Integration
+FACEBOOK_PAGE_ID=seu_page_id
+FACEBOOK_ACCESS_TOKEN=seu_access_token
+FACEBOOK_VERIFICATION_TOKEN=seu_verification_token
+
+# Redis Connection
+REDIS_HOST=seu_redis_host
+REDIS_PORT=seu_redis_port
+REDIS_PASSWORD=sua_senha_redis
+
+# MySQL Connection
+MYSQL_HOST=seu_mysql_host
+MYSQL_PORT=seu_mysql_port
+MYSQL_USER=seu_usuario
+MYSQL_PASSWORD=sua_senha
+MYSQL_DATABASE=seu_banco
+```
+
+## Executando com Docker
+
+1. Construa a imagem:
+```bash
+docker-compose build
+```
+
+2. Inicie os containers:
+```bash
+docker-compose up
+```
+
+Para rodar em background:
+```bash
+docker-compose up -d
+```
+
+3. Para parar os containers:
+```bash
+docker-compose down
+```
+
+## Desenvolvimento Local
+
+1. Instale as dependências:
 ```bash
 npm install
 ```
 
-2. Configure environment variables:
-Create a `.env` file with:
-```
-VITE_API_URL=http://localhost:5173
-PORT=80
-NODE_ENV=development
-BASE_URL=your-ngrok-url
-FACEBOOK_PAGE_ID=your-page-id
-FACEBOOK_ACCESS_TOKEN=your-access-token
-REDIS_URL=your-redis-url
-DATABASE_URL=your-database-url
-```
-
-3. Start the development server and worker:
+2. Build do projeto:
 ```bash
-npm run dev
+npm run build
 ```
 
-## 📝 License
+3. Inicie o servidor:
+```bash
+npm start
+```
 
-MIT License
+## Estrutura do Projeto
+
+- `src/` - Código fonte
+  - `config/` - Configurações
+  - `lib/` - Bibliotecas e utilitários
+  - `services/` - Serviços da aplicação
+  - `templates/` - Templates de mensagens
+  - `workers/` - Workers para processamento assíncrono
+
+## Licença
+
+MIT
